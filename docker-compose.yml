@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: vehicle-events-postgres
+
+    environment:
+      POSTGRES_DB: vehicle_events
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: pwd
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app_user -d vehicle_events"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

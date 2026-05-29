@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: vehicleevents
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vehicle_events
+    username: app_user
+    password: pwd
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+    open-in-view: false
+
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.springframework.security: debug
+
+jwt:
+  secret: "KabouterPlopEetPlopkoekenSamenMetKabouterLuiInZijnKleinePaddenstoel"
