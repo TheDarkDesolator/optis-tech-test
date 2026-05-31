@@ -1,7 +1,11 @@
 package be.sbln.optis.vehicleevents.util;
 
 import be.sbln.optis.vehicleevents.models.CarDealer;
+import be.sbln.optis.vehicleevents.models.dtos.RegisterRequest;
 import be.sbln.optis.vehicleevents.repos.CarDealerRepository;
+import be.sbln.optis.vehicleevents.repos.UserRepository;
+import be.sbln.optis.vehicleevents.security.AuthService;
+import be.sbln.optis.vehicleevents.services.UserAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -13,9 +17,15 @@ import java.util.List;
 public class DataSeeder implements CommandLineRunner {
 
     private final CarDealerRepository carDealerRepository;
+    private final AuthService authService;
 
     @Override
     public void run(String... args) {
+
+        RegisterRequest registerRequest = new RegisterRequest();
+        registerRequest.setUsername("admin");
+        registerRequest.setPassword("admin");
+        authService.registerAccount(registerRequest);
 
         seedCarDealers();
 

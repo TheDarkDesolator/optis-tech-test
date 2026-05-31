@@ -1,5 +1,6 @@
 package be.sbln.optis.vehicleevents.security;
 
+import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -34,10 +35,13 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
         String token = header.substring(7);
 
-        if (!jwtUtil.isValid(token)) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        try {
+            jwtUtil.validateToken(token);
+        } catch(JwtException e) {
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getLocalizedMessage());
             return;
         }
+
 
         String username = jwtUtil.extractUsername(token);
 

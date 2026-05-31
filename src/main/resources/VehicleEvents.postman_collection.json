@@ -1,0 +1,247 @@
+{
+  "info": {
+    "_postman_id": "9a6d922a-4f6e-4827-bf85-4083a8f14081",
+    "name": "VehicleEvents",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17348060"
+  },
+  "item": [
+    {
+      "name": "maintenanceEvent",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"eventType\": \"MAINTENANCE\",\r\n  \"vin\": \"VIN123\",\r\n  \"dealerCode\": \"BE001\",\r\n  \"dealerCountry\": \"BE\",\r\n  \"timestamp\": \"2026-05-27T22:27:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "unknown request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"eventType\": \"MAINTENANCE\",\r\n  \"vin\": \"VIN123\",\r\n  \"dealerCode\": \"BE001\",\r\n  \"dealerCountry\": \"BE\",\r\n  \"timestamp\": \"2026-05-27T22:27:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "otaEvent",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"eventType\": \"MAINTENANCE\",\r\n  \"vin\": \"VIN123\",\r\n  \"dealerCode\": \"BE001\",\r\n  \"dealerCountry\": \"BE\",\r\n  \"timestamp\": \"2026-05-27T22:27:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "obfcmEvent",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"eventType\": \"MAINTENANCE\",\r\n  \"vin\": \"VIN123\",\r\n  \"dealerCode\": \"BE001\",\r\n  \"dealerCountry\": \"BE\",\r\n  \"timestamp\": \"2026-05-27T22:27:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get events",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"eventType\": \"MAINTENANCE\",\r\n  \"vin\": \"VIN123\",\r\n  \"dealerCode\": \"BE001\",\r\n  \"dealerCountry\": \"BE\",\r\n  \"timestamp\": \"2026-05-27T22:27:00\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Sacha\",\r\n    \"password\" : \"Sacha123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Sacha\",\r\n    \"password\" : \"Sacha123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTYWNoYSIsImlhdCI6MTc4MDI1ODkxMiwiZXhwIjoxNzgwMjYyNTEyfQ.Ju4BGZRtLt0ifTWcjGYFWWCcBBtlyCefpuRNWK1pHx96XiMDhKtPNZhFOfSy1SKs_h0R--iUC5DMnH7VoDSvzA",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

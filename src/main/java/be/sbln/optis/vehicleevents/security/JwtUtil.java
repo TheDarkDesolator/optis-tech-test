@@ -1,8 +1,9 @@
 package be.sbln.optis.vehicleevents.security;
 
+import be.sbln.optis.vehicleevents.util.LoggingUtil;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -45,12 +46,12 @@ public class JwtUtil {
         return extractClaims(token).getSubject();
     }
 
-    public boolean isValid(String token) {
+    public void validateToken(String token) {
         try {
             extractClaims(token);
-            return true;
         } catch (Exception e) {
-            return false;
+            LoggingUtil.logError(this, "Auth failed!", e.getLocalizedMessage());
+            throw new JwtException(e.getMessage());
         }
     }
 }
